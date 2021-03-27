@@ -53,11 +53,11 @@ def get_rank(rank: str=None, next_rank:str =None, letters: str = string.ascii_lo
         new_rank = letters[len(letters)//2]*start_length
     else:
         new_rank = get_next_rank(rank, letters, is_sorted=True)
-    if next_rank and new_rank>next_rank:
+    if next_rank and new_rank>=next_rank:
         new_rank = rank+letters[0]
     return new_rank
 
 
 if __name__=="__main__":
-    print(get_rank("nnnnnnnn"))
+    print(get_rank("nnm", next_rank="nnn", start_length=20))
     
