@@ -47,17 +47,17 @@ def get_rank(rank: str=None, next_rank:str =None, letters: str = string.ascii_lo
     returns the next possible string between two strings
     """
     letters = sorted(set(letters))
-    if not rank and next_rank:
+    if next_rank and (not rank or len(rank) < len(next_rank)):
         new_rank = get_previous_rank(next_rank, letters, is_sorted=True)
     elif not rank and not next_rank:
         new_rank = letters[len(letters)//2]*start_length
     else:
         new_rank = get_next_rank(rank, letters, is_sorted=True)
-    if next_rank and new_rank>=next_rank:
-        new_rank = rank+letters[0]
+    if next_rank and new_rank==next_rank:
+        new_rank = rank+letters[len(letters)//2]
     return new_rank
 
 
 if __name__=="__main__":
-    print(get_rank("nnm", next_rank="nnn", start_length=20))
+    print(get_rank("nnl", next_rank="nnlm", start_length=20))
     
