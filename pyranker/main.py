@@ -48,7 +48,10 @@ def get_rank(rank: str=None, next_rank:str =None, letters: str = string.ascii_lo
     """
     letters = sorted(set(letters))
     if next_rank and (not rank or len(rank) < len(next_rank)):
-        new_rank = get_previous_rank(next_rank, letters, is_sorted=True)
+        if next_rank[-1]>letters[1]:
+            new_rank = get_previous_rank(next_rank, letters, is_sorted=True)
+        else:
+            new_rank = next_rank[:-1]+letters[0]+letters[len(letters)//2]
     elif not rank and not next_rank:
         new_rank = letters[len(letters)//2]*start_length
     else:
@@ -59,5 +62,5 @@ def get_rank(rank: str=None, next_rank:str =None, letters: str = string.ascii_lo
 
 
 if __name__=="__main__":
-    print(get_rank("nnl", next_rank="nnlm", start_length=20))
+    print(get_rank("nnlann", next_rank="nnlao", start_length=20))
     
