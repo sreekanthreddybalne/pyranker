@@ -1,0 +1,25 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "3f5d530b1f0fba44264b1f54c4f6c9ead4758ba8106747123b860d7b49ea9ad3"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.8"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "pyranker": {
+            "git": "https://github.com/whitehathackersree/pyranker",
+            "ref": "8c6260e402185d5f1397920331953005a7ce8563"
+        }
+    },
+    "develop": {}
+}

@@ -62,5 +62,5 @@ def get_rank(rank: str=None, next_rank:str =None, letters: str = string.ascii_lo
 
 
 if __name__=="__main__":
-    print(get_rank("nnlann", next_rank="nnlao", start_length=20))
+    print(get_rank("nnnnnpl", next_rank="nnlao", start_length=20))
     
